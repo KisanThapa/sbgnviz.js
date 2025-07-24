@@ -4439,7 +4439,7 @@ module.exports = function () {
     "controls-transport-of-chemical": "#3F00FF",
     "chemical-affects": "#D95F23",
     "reacts-with": "#4E214B",
-    "used-to-produce": "#FF2F07",
+    "used-to-produce": "#0000FF",
     phosphorylates: "#43A93C",
     dephosphorylates: "#CD4F32",
     "upregulates-expression": "#43A93C",
