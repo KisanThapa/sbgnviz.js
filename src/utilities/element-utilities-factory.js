@@ -579,6 +579,26 @@ module.exports = function () {
         asTarget: { isAllowed: true },
       },
     },
+    consumes: {
+      "SIF macromolecule": {
+        asSource: {},
+        asTarget: { isAllowed: true }
+      },
+      "SIF simple chemical": {
+        asSource: { isAllowed: true },
+        asTarget: {}
+      },
+    },
+    produces: {
+      "SIF macromolecule": {
+        asSource: {},
+        asTarget: { isAllowed: true }
+      },
+      "SIF simple chemical": {
+        asSource: { isAllowed: true },
+        asTarget: {}
+      },
+    },
     activates: {
       "SIF macromolecule": {
         asSource: { isAllowed: true },
@@ -1847,6 +1867,8 @@ module.exports = function () {
     "chemical-affects",
     "reacts-with",
     "used-to-produce",
+    "consumes",
+    "produces",
     "phosphorylates",
     "dephosphorylates",
     "upregulates-expression",
@@ -1888,6 +1910,8 @@ module.exports = function () {
     "chemical-affects",
     "reacts-with",
     "used-to-produce",
+    "consumes",
+    "produces",
     "activates",
     "inhibits",
     "phosphorylates",
@@ -3007,6 +3031,8 @@ module.exports = function () {
       case "controls-production-of":
       case "controls-transport-of-chemical":
       case "used-to-produce":
+      case "consumes":
+      case "produces":
       case "activates-gtpase":
       case "acetylates":
       case "methylates":
@@ -4426,33 +4452,35 @@ module.exports = function () {
   };
 
   var defaultSifEdgeColorMap = {
-    "neighbor-of": "#FC002C",
-    "interacts-with": "#B57261",
-    "in-complex-with": "#B4987A",
-    "controls-state-change-of": "#B4E1CD",
-    "controls-transport-of": "#F0E7C8",
-    "controls-phosphorylation-of": "#D970A1",
-    "catalysis-precedes": "#8EC3ED",
-    "controls-expression-of": "#6A0F30",
-    "consumption-controled-by": "#A9A9F7",
-    "controls-production-of": "#2D5207",
-    "controls-transport-of-chemical": "#3F00FF",
-    "chemical-affects": "#D95F23",
-    "reacts-with": "#4E214B",
-    "used-to-produce": "#0000FF",
-    phosphorylates: "#43A93C",
-    dephosphorylates: "#CD4F32",
-    "upregulates-expression": "#43A93C",
-    "downregulates-expression": "#CD4F32",
-    activates: "#32D849",
-    inhibits: "#4886A5",
-    "activates-gtpase": "#468DE3",
-    "inhibits-gtpase": "#C364BF",
-    acetylates: "#55B1B6",
-    deacetylates: "#EE5F78",
-    methylates: "#B0B03D",
-    demethylates: "#DB6F21",
-  };
+		"neighbor-of": "#FC002C",
+		"interacts-with": "#B57261",
+		"in-complex-with": "#B4987A",
+		"controls-state-change-of": "#B4E1CD",
+		"controls-transport-of": "#F0E7C8",
+		"controls-phosphorylation-of": "#D970A1",
+		"catalysis-precedes": "#8EC3ED",
+		"controls-expression-of": "#6A0F30",
+		"consumption-controled-by": "#A9A9F7",
+		"controls-production-of": "#2D5207",
+		"controls-transport-of-chemical": "#3F00FF",
+		"chemical-affects": "#D95F23",
+		"reacts-with": "#4E214B",
+    "used-to-produce": "#465078",
+    "consumes": "#96963C",
+    "produces": "#507850",
+		phosphorylates: "#43A93C",
+		dephosphorylates: "#CD4F32",
+		"upregulates-expression": "#43A93C",
+		"downregulates-expression": "#CD4F32",
+		activates: "#32D849",
+		inhibits: "#4886A5",
+		"activates-gtpase": "#468DE3",
+		"inhibits-gtpase": "#C364BF",
+		acetylates: "#55B1B6",
+		deacetylates: "#EE5F78",
+		methylates: "#B0B03D",
+		demethylates: "#DB6F21",
+	};
 
   var defaultSizeMap = {
     macromolecule: {
